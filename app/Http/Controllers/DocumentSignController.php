@@ -86,7 +86,7 @@ class DocumentSignController extends Controller
 
         $pdf = new \Mpdf\Mpdf();
         $pdf->AddPage();
-        $pdf->SetHTMLFooter('<div style="position: absolute; bottom: 0; right: 1%; width: 100px; text-align: right;"><img src="' . $signatureImage . '" style="width: 100%;" />[NOTARY JURAT]</div>');
+        $pdf->SetHTMLFooter('<div style="position: absolute; bottom: 0; right: 1%; width: 80px; text-align: right;"><img src="' . $signatureImage . '" style="width: 100%;" />[NOTARY JURAT]</div>');
         $html = view('pdf_with_signature', ['data' => $request->all(), 'signatureImage' => $signatureImage])->render();
         $pdf->WriteHTML($html);
         $filename = 'generated_pdf_' . time() . '.pdf';
