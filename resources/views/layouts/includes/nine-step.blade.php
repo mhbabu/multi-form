@@ -1,6 +1,6 @@
 
-<div class="row p-3 text-left signature-step">
-    <div class="col-md-6">
+<div class="row signature-step">
+    <div class="col-md-12 mb-4">
         {!!Form::label('image_signature', 'Select Your Signature Type',['class' => 'required-star'])!!}
         {!!Form::select('signature_status', ['Digital Signature' => 'Digital Signature', 'Image Signature' => 'Image Signature'],'',['class' => $errors->has('other_profession') ? 'form-control is-invalid':'form-control required','placeholder'=> '---', 'id' => 'signatureStatus']) !!}
     </div>

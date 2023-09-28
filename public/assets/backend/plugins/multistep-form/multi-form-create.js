@@ -56,6 +56,7 @@
 
             if(targetTabAttr === 'last-one-step'){
                 parentDiv.find('.last-one').addClass('proc-active');
+                $('.last-one-step').addClass('proc-active');
                 parentDiv.find('.interested-country').removeClass('proc-active').addClass('proc-completed');
             }
             

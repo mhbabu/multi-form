@@ -46,7 +46,7 @@
     </style>
 @endsection
 @section('content')
-    <div class="col-md-10 mx-auto">
+    <div class="col-md-8 mx-auto">
         {!! Form::open(['route' => 'document.submit', 'method' => 'POST', 'enctype' => 'multipart/form-data', 'class' => 'dataForm', 'id' => 'myForm']) !!}
         <div class="card">
             <div class="infoDiv">
@@ -55,15 +55,15 @@
                         <div class="step-left">
                             <div class="step-list-content text-uppercase">
                                 <ul class="step-list m-0 p-0">
-                                    <li class="general-info" style="cursor:pointer;">First Step</li>
-                                    <li class="ssc-level" style="cursor:pointer;">MODEL EXPERIENCE</li>
-                                    <li class="hsc-level" style="cursor:pointer;">LEGAL ADULTS</li>
-                                    <li class="bachelor-degree" style="cursor:pointer;">YOUR STATS</li>
-                                    <li class="master-degree" style="cursor:pointer;">YOUR DOMINATIONS</li>
-                                    <li class="english-language" style="cursor:pointer;">QUESTION & ANS</li>
-                                    <li class="testimonial" style="cursor:pointer;">AGGREMENT</li>
-                                    <li class="interested-country" style="cursor:pointer;">Social Network Accts</li>
-                                    <li class="last-one-step" style="cursor:pointer;">NETWORK & SIGNATURE</li>
+                                    <li class="general-info" style="cursor:pointer">First Step</li>
+                                    <li class="ssc-level" style="cursor:pointer">MODEL EXPERIENCE</li>
+                                    <li class="hsc-level" style="cursor:pointer">LEGAL ADULTS</li>
+                                    <li class="bachelor-degree" style="cursor:pointer">YOUR STATS</li>
+                                    <li class="master-degree" style="cursor:pointer">YOUR DOMINATIONS</li>
+                                    <li class="english-language" style="cursor:pointer">QUESTION & ANS</li>
+                                    <li class="testimonial" style="cursor:pointer">Social Network Accts</li>
+                                    <li class="interested-country" style="cursor:pointer">AGGREMENT</li>
+                                    <li class="last-one-step" style="cursor:pointer">NETWORK & SIGNATURE</li>
                                 </ul>
                             </div>
                         </div>
@@ -82,7 +82,7 @@
                             @include("layouts.includes.four-step")
                         </div>
                         <div class="tab master-tab" active-tab="master-degree">
-                                @include("layouts.includes.five-step")
+                            @include("layouts.includes.five-step")
                         </div>
                         <div class="tab english-language-tab" active-tab="english-language">
                             @include("layouts.includes.six-step")

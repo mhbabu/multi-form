@@ -19,9 +19,9 @@
     @yield('header-css')
 </head>
 
-<body class="hold-transition login-page">
-    <section class="content my-4">
-        <div class="container-fluid">
+<body class="hold-transition" style="background-color: #e9ecef">
+    <section class="content">
+        <div class="container-fluid my-lg-5">
             @include('layouts.includes.messages')
             @yield('content')
         </div>
