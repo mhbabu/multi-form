@@ -19,7 +19,7 @@
     @yield('header-css')
 </head>
 
-<body>
+<body class="hold-transition login-page">
     <section class="content my-4">
         <div class="container-fluid">
             @include('layouts.includes.messages')
