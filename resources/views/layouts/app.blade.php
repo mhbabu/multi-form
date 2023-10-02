@@ -22,11 +22,6 @@
 <body class="hold-transition" style="background-color: #e9ecef">
     <section class="content">
         <div class="container-fluid my-lg-5">
-              <div class="row">
-                <div class="col-md-12">
-                    @include('layouts.includes.messages')
-                </div>
-              </div>
             @yield('content')
         </div>
         <!--/. container-fluid -->

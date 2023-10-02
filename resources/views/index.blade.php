@@ -48,6 +48,9 @@
 @endsection
 @section('content')
     <div class="col-md-8 mx-auto">
+        <p class="px-2 py-2">
+            @include('layouts.includes.messages')
+        </p>
         {!! Form::open(['route' => 'document.submit', 'method' => 'POST', 'enctype' => 'multipart/form-data', 'class' => 'dataForm', 'id' => 'myForm']) !!}
         <div class="card">
             <div class="infoDiv">
