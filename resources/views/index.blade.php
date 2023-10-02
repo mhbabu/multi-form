@@ -58,7 +58,7 @@
                     <div class="col-md-3" style="box-shadow: 3px 0 5px -2px #888">
                         <div class="step-left">
                             <div class="step-list-content text-uppercase">
-                                <ul class="step-list m-0 p-0">
+                                <ul class="step-list m-0 p-0 list-icons">
                                     <li class="general-info" style="cursor:pointer">First Step</li>
                                     <li class="ssc-level" style="cursor:pointer">MODEL EXPERIENCE</li>
                                     <li class="hsc-level" style="cursor:pointer">LEGAL ADULTS</li>
