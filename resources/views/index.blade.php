@@ -4,6 +4,7 @@
     {!! Html::style('/assets/backend/plugins/multistep-form/multi-form.css') !!}
     {!! Html::style('/assets/login/css/icofont.min.css') !!}
     {!! Html::style('/assets/login/css/site-flaticon.css') !!}
+    {!! Html::style('/assets/backend/dist/css/dropzone.min.css') !!}
     <style>
         /*Signature*/
         .signature-container {
@@ -112,6 +113,7 @@
 @section('footer-script')
     {!! Html::script('/assets/backend/plugins/multistep-form/multi-form-create.js') !!}
     {!! Html::script('js/signature_pad.min.js') !!}
+    {!! Html::script('/assets/backend/dist/js/image-uploader.min.js') !!}
 
     <script type="text/javascript">
         /***********************************
@@ -122,6 +124,11 @@
                 validations: {}
             }).navigateTo(0);
         });
+
+        /**********************************
+         MULTIPLE IMAGE PREVIEW START HERE
+        ************************************/
+        $('.input-images-1').imageUploader();
 
         /*******************************
         FORM VALIDATION WITH CHECKBOX
@@ -208,65 +215,6 @@
                 reader.readAsDataURL(this.files[0]);
             }
         });
-
-
-        /******************************************
-         MULTIPLE FILE UPLOAD SCRIPTING START HERE
-        *******************************************/
-        function uploadFiles(input) {
-            if (input.files || input.files) {
-                let allowedFileTypes = ['image/jpeg', 'image/jpg', 'image/png'];
-                let formData = new FormData();
-
-                for (let i = 0; i < input.files.length; i++) {
-                    let fileType = input.files[i].type;
-                    let fileSize = (input.files[i].size / 1024 / 1024).toFixed(2);
-
-                    if (!allowedFileTypes.includes(fileType)) {
-                        swal("Only PDF, PNG, JPEG, JPG types are allowed!");
-                        return false;
-                    }
-
-                    if (fileSize > 2) {
-                        swal("Maximum file size 2MB allowed!");
-                        input.value = '';
-                        return false;
-                    }
-
-                    formData.append('_token', "{{ csrf_token() }}");
-                    formData.append('file_data[]', input.files[i]);
-                }
-
-                $(input).parent().parent().find('.uploaded-file').html('Uploading....');
-                let action = "{{ url('upload-multiple-files') }}"; // upload the URL
-                $.ajax({
-                    url: action,
-                    dataType: 'json',
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-                    data: formData,
-                    type: 'post',
-                    success: function(response) {
-                        if (response.status) {
-                            $(input).parent().parent().find('.uploaded-file').html('');
-                            // $(input).val('');
-                            $.each(response.file_paths, function(index, value) {
-                                var anchor = $(`<a class="btn btn-primary btn-sm m-1" href="${value}" target="_blank">File ${index+1}</a>`);
-                                var input = $(`<input class="uploadedImges" type="hidden" name="uploaded_images[]" value="${value}" />`);
-                                $('.uplodedImages').append(anchor);
-                                $('.uploded-inputs').append(input);
-                            });
-                        } else {
-                            $(input).parent().parent().find('.uploaded-file').html('');
-                        }
-                    }
-                });
-            } else {
-                $(this).val('');
-                swal("Please select between 5 and 20 files.");
-            }
-        }
 
         /********************************
          SIGNATURE SCRIPTING START HERE

@@ -44,19 +44,8 @@
         </div>
     </div>
     <div class="col-md-12">
-        <div class="upload-container mb-2">
-            <h1>Upload Your Photos</h1>
-            <p>
-                High resolution & professionally shot photos are preferred. No Selfies Please.<br>
-                <small>Minimun 5 photos is mandatory and Maximum 20</small>
-            </p>
-            <label class="btn btn-default btn-xs">
-                <input class="required" type="file" onchange="uploadFiles(this)" name="image_multiple" id="image_multiple" accept="image/jpg,image/jpeg,image/png" multiple>
-            </label>
-        </div>
-        <span class="uploaded-file mt-2 float-right"></span>
-        <div class="uplodedImages"></div>
-        <div class="uploded-inputs"></div>
+        <label class="required-star">Images</label>
+        <div class="input-images-1" style="padding-top: .5rem; cursor: pointer"></div>
     </div>
 </div>
     

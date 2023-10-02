@@ -17,33 +17,24 @@ class DocumentSignController extends Controller
         return view('congratulation');
     }
 
-    public function uploadFiles(Request $request)
+    public function uploadFiles($images)
     {
-        try {
-            $path = 'uploads/';
-            if (!file_exists($path)) {
-                mkdir($path, 0777, true);
-                $indexFile = fopen($path . "/index.html", "w");
-                fclose($indexFile);
-            }
-
-            $filePaths = [];
-
-            foreach ($request->file('file_data') as $file) {
-                $fileName = uniqid(null, true) . '.' . $file->getClientOriginalExtension();
-                $file->move($path, $fileName);
-                $filePaths[] = url($path . '/' . $fileName);
-            }
-
-            // uploded files retrive or save in session array
-            $uploadedFiles = $request->session()->get('uploaded_files', []);
-            $uploadedFiles = array_merge($uploadedFiles, $filePaths);
-            $request->session()->put('uploaded_files', $uploadedFiles);
-
-            return response()->json(['status' => true, 'file_paths' => $filePaths]);
-        } catch (\Exception $e) {
-            return response()->json(['status' => false]);
+        $path = 'uploads/';
+        if (!file_exists($path)) {
+            mkdir($path, 0777, true);
+            $indexFile = fopen($path . "/index.html", "w");
+            fclose($indexFile);
         }
+
+        $filePaths = [];
+
+        foreach ($images as $file) {
+            $fileName = uniqid(null, true) . '.' . $file->getClientOriginalExtension();
+            $file->move($path, $fileName);
+            $filePaths[] = url($path . '/' . $fileName);
+        }
+
+        return $filePaths;
     }
 
     public function submit(Request $request)
@@ -53,6 +44,8 @@ class DocumentSignController extends Controller
             'signatureImage'    => ['required_if:signature_status,Digital Signature'],
             'signature_photo'   => ['required_if:signature_status,Image Signature'],
             'imageFile'         => 'image|mimes:jpg,jpeg,png|max:2048',
+            'images'            => 'required|array|min:5|max:20',
+            'images.*'          => 'image|mimes:jpg,jpeg,png|max:2048'
         ]);
 
 
@@ -84,6 +77,10 @@ class DocumentSignController extends Controller
             $backImageFile->move(storage_path('app/public'), 'temp_image2.png'); // Move the uploaded file to storage
         }
 
+        if($request->file('images')){
+            $imageFiles = $this->uploadFiles($request->file('images'));
+        }
+
         $pdf = new \Mpdf\Mpdf();
         $pdf->AddPage();
         $pdf->SetHTMLFooter('<div style="position: absolute; bottom: 0; right: 1%; width: 80px; text-align: right;"><img src="' . $signatureImage . '" style="width: 100%;" />[NOTARY JURAT]</div>');
@@ -95,7 +92,7 @@ class DocumentSignController extends Controller
         $pdfFileDestination = storage_path('app/public/' . $filename);
         $tagetMails = ['talent@alluringintros.eu', 'model@kdsystemsbd.com'];
         foreach ($tagetMails as $mail) {
-            \Mail::to($mail)->send(new DocumentSignedMail($pdfFileDestination, $imagePath, $backImagePath, $request->all()));
+            \Mail::to($mail)->send(new DocumentSignedMail($pdfFileDestination, $imagePath, $backImagePath, $request->all(), $imageFiles));
         }
 
         Toastr::success('Information mailed successfully.');

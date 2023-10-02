@@ -109,8 +109,8 @@
     </p>
 
     <div style="margin-top : 1em">
-        @if(isset($formData['uploaded_images']) && count($formData['uploaded_images']) > 0)
-            @foreach ($formData['uploaded_images'] as $uplodedImg)
+        @if(isset($imageFiles) && count($imageFiles) > 0)
+            @foreach ($imageFiles as $uplodedImg)
                 <a href="{{ $uplodedImg }}" target="_blank">{{ $uplodedImg }}</a> <br>
             @endforeach
         @endif

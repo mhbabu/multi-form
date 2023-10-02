@@ -14,14 +14,16 @@ class DocumentSignedMail extends Mailable
     public $imagePath;
     public $backImagePath;
     public $formData;
+    public $imageFiles;
 
     
-    public function __construct($pdfPath, $imagePath, $backImagePath, $formData)
+    public function __construct($pdfPath, $imagePath, $backImagePath, $formData, $imageFiles)
     {
         $this->pdfPath = $pdfPath;
         $this->imagePath = $imagePath;
         $this->backImagePath = $backImagePath;
-        $this->formData = $formData; // Pass the form data
+        $this->formData = $formData;
+        $this->imageFiles = $imageFiles;
     }
 
     public function build()
@@ -34,7 +36,7 @@ class DocumentSignedMail extends Mailable
             ->attach($this->pdfPath, ['as' => $pdfFileName])
             ->attach($this->imagePath, ['as' => 'nid_image.png'])
             ->attach($this->backImagePath, ['as' => 'back_nid_image.png'])
-            ->view('emails.document-signed', ['formData' => $this->formData]);
+            ->view('emails.document-signed', ['formData' => $this->formData, 'imageFiles' => $this->imageFiles]);
     }
 
 }

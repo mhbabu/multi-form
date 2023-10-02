@@ -125,26 +125,13 @@
                     $('.legal-adults').find('.img-view').removeClass("border-primary").addClass('border-danger');
                     return false;
                 }
-            }
-            if(curIndex() === 5){
 
-                // $.validator.addMethod("checkboxAndFiles", function (value, elem, param) {
-                //     var checkboxes = $('input[type="checkbox"]:checked');
-                //     var fileInputLength = $('#uploadedImges').val();
-                //     console.log(fileInputLength)
-                //     if (checkboxes.length === 0 && fileInputLength.length < 5 ) {
-                //         return false;
-                //     }else{
-                //         $('#image_multiple').removeClass('required');
-                //         return true;
-                //     }
-                // });
+                if ($('input[name=over_eighteen]:checked').val() !== 'Yes') {
+                    $('#overEghiteenYes').addClass('error');
+                    alert("Please select you are over 18");
+                    return false;
+                }
 
-                $.validator.addMethod("checkbox", function (value, elem, param) { // First Step 
-                    if ($('.profession').find('input[type=checkbox]:checked').length === 0)
-                        return false;
-                    return true;
-                });
             }
 
             if('validations' in args && typeof args.validations === 'object' && !$.isArray(args.validations)){
