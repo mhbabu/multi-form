@@ -195,7 +195,7 @@
                     }
                 }
 
-                $(this).addClass('px-3').html('<i class="fa fa-cog fa-spin"></i> Processing...')
+                $(this).addClass('px-3').html('<i class="fa fa-cog fa-spin mr-1"></i> Processing...')
                 $(this).prop('disabled', true);
                 form.submit();
             }
