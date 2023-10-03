@@ -1,6 +1,6 @@
 <div class="row p-3 text-left flowing-question">
     <div class="col-md-12 mb-3 text-center">
-        <h3 class="uppercase-text">Please answer these following questions</h2>
+        <h3 class="text-uppercase">Please answer these following questions</h2>
     </div>
     <div class="form-group col-md-6">
         {!! Form::label('primary_focous','1. What is your primary focus in the companion?',['class'=>'required-star']) !!}
@@ -25,7 +25,7 @@
         {!! Form::text('racial_objections','',['class'=>$errors->has('racial_objections')?'form-control is-invalid':'form-control required','placeholder'=>'Type Here']) !!}
     </div>
     <div class="col-md-12">
-        <div class="form-group">
+        <div class="form-group do-you-see">
             {!! Form::label('','6. Do you only see:',['class'=>'required-star']) !!}
             <div class="d-flex justify-content-around">
                 <div class="checkbox">
@@ -46,6 +46,7 @@
     <div class="col-md-12">
         <label class="required-star">Images</label>
         <div class="input-images-1" style="padding-top: .5rem; cursor: pointer"></div>
+        <strong class="ml-1 my-1">Minimum 5 images and Maximum 20 images are allowed</small>
     </div>
 </div>
     

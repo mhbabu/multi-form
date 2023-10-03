@@ -134,6 +134,20 @@
                 }
             }
 
+            if(curIndex() === 5){
+                var imageCount = $(".uploaded-image").length;
+                if (imageCount < 5 || imageCount > 20) {
+                  alert("Please upload minimum 5 and maximum 20 images.");
+                  return false;
+                }
+
+                $.validator.addMethod("checkbox", function (value, elem, param) {
+                    if ($('.do-you-see').find('input[type=checkbox]:checked').length === 0)
+                        return false;
+                    return true;
+                });
+            }
+
             if('validations' in args && typeof args.validations === 'object' && !$.isArray(args.validations)){
                 if(!('noValidate' in args) || (typeof args.noValidate === 'boolean' && !args.noValidate)){
                     form.validate({
