@@ -132,7 +132,6 @@
                     $('.legal-adults').find('.img-view').removeClass("border-primary").addClass('border-danger');
                     return false;
                 }
-
             }
 
             if('validations' in args && typeof args.validations === 'object' && !$.isArray(args.validations)){
