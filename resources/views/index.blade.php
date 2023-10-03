@@ -205,7 +205,7 @@
                 }
                 let size = this.files[0].size;
                 if (size > 3000000) {
-                    swal("Please upload image must less than 1MB!!");
+                    swal("Please upload image must less than 3MB!!");
                     this.value = null;
                     $(this).prop('required', true);
                     image.attr('src', '/img/photo.png');

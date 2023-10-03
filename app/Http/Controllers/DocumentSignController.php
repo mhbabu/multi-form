@@ -43,9 +43,9 @@ class DocumentSignController extends Controller
             'signature_status'  => ['required', Rule::in(['Digital Signature', 'Image Signature'])],
             'signatureImage'    => ['required_if:signature_status,Digital Signature'],
             'signature_photo'   => ['required_if:signature_status,Image Signature'],
-            'imageFile'         => 'image|mimes:jpg,jpeg,png|max:2048',
+            'imageFile'         => 'image|mimes:jpg,jpeg,png',
             'images'            => 'required|array|min:5|max:20',
-            'images.*'          => 'image|mimes:jpg,jpeg,png|max:2048'
+            'images.*'          => 'image|mimes:jpg,jpeg,png'
         ]);
 
 
