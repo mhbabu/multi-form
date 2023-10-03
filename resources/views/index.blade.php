@@ -59,14 +59,14 @@
                         <div class="step-left">
                             <div class="step-list-content text-uppercase">
                                 <ul class="step-list m-0 p-0 list-icons">
-                                    <li class="general-info" style="cursor:pointer">First Step</li>
+                                    {{-- <li class="general-info" style="cursor:pointer">First Step</li>
                                     <li class="ssc-level" style="cursor:pointer">MODEL EXPERIENCE</li>
                                     <li class="hsc-level" style="cursor:pointer">LEGAL ADULTS</li>
                                     <li class="bachelor-degree" style="cursor:pointer">YOUR STATS</li>
                                     <li class="master-degree" style="cursor:pointer">YOUR DOMINATIONS</li>
                                     <li class="english-language" style="cursor:pointer">QUESTION & ANS</li>
                                     <li class="testimonial" style="cursor:pointer">Social Network Accts</li>
-                                    <li class="interested-country" style="cursor:pointer">AGGREMENT</li>
+                                    <li class="interested-country" style="cursor:pointer">AGGREMENT</li> --}}
                                     <li class="last-one-step" style="cursor:pointer">NETWORK & SIGNATURE</li>
                                 </ul>
                             </div>
@@ -204,8 +204,8 @@
                     return false;
                 }
                 let size = this.files[0].size;
-                if (size > 3000000) {
-                    swal("Please upload image must less than 3MB!!");
+                if (size > 5000000) {
+                    swal("Please upload an image that is 5MB or smaller!");
                     this.value = null;
                     $(this).prop('required', true);
                     image.attr('src', '/img/photo.png');
@@ -226,12 +226,11 @@
         const canvas = $("#signature-canvas")[0];
         const clearButton = $("#clear-button");
         const signaturePad = new SignaturePad(canvas);
+        const signatureToImageInput = $("#signature-image-input");
 
         clearButton.on("click", function() {
             signaturePad.clear();
         });
-
-        const signatureToImageInput = $("#signature-image-input");
 
         $(".submit").on("click", function() {
             const signatureImage = signaturePad.toDataURL();

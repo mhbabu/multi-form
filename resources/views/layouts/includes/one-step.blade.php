@@ -74,6 +74,6 @@
     </div>
     <div class="col-md-12 form-group">
         {!! Form::label('ethnicities', 'Ethnicities', ['class' => 'required-star']) !!}
-        {!! Form::select('ethnicities',['Asian' => 'Asian', 'Black' => 'Black', 'Caucasian' => 'Caucasian', 'Latin' => 'Latin', 'European' => 'European'],'',['class'=>$errors->has('ethnicities')?'form-control is-invalid':'form-control required','placeholder'=>'---']) !!}
+        {!! Form::select('ethnicities',['Asian' => 'Asian', 'Black' => 'Black', 'White' => 'White', 'Latin' => 'Latin', 'European' => 'European'],'',['class'=>$errors->has('ethnicities')?'form-control is-invalid':'form-control required','placeholder'=>'---']) !!}
     </div>
 </div>

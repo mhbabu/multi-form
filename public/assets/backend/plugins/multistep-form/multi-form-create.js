@@ -129,6 +129,7 @@
                 const imageFileOfId = $(tabs).find('#imageFileOfId').val();
                 const imageBackOfId = $(tabs).find('#imageBackOfId').val();
                 if(!imageFileOfId || !imageBackOfId){
+                    alert('Please upload the required file');
                     $('.legal-adults').find('.img-view').removeClass("border-primary").addClass('border-danger');
                     return false;
                 }
@@ -166,10 +167,36 @@
             form.navigateTo(curIndex() + 1);
         });
         form.find('.submit').on('click', function(e){
+
             if(typeof args.beforeSubmit !== 'undefined' && typeof args.beforeSubmit !== 'function')
                 args.beforeSubmit(form, this);
             /*check if args.submit is set false if not then form.submit is not gonna run, if not set then will run by default*/
             if(typeof args.submit === 'undefined' || (typeof args.submit === 'boolean' && args.submit)){
+                e.preventDefault();
+
+                const signatureStatus = $('#signatureStatus').val();
+                if(!signatureStatus){
+                    alert('Please fill up the requied fields');
+                    return false;
+                }
+
+                if(signatureStatus === 'Image Signature'){
+                    const signaturePhoto = $('.signature-img').val();
+                    if (!signaturePhoto) {
+                        alert('Please submit your image signature');
+                        return false;
+                    }
+                }
+
+                if(signatureStatus === 'Digital Signature'){
+                    if ($("#signature-image-input").val() === 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACWCAYAAABkW7XSAAAAAXNSR0IArs4c6QAABGJJREFUeF7t1AEJAAAMAsHZv/RyPNwSyDncOQIECEQEFskpJgECBM5geQICBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAAYPlBwgQyAgYrExVghIgYLD8AAECGQGDlalKUAIEDJYfIEAgI2CwMlUJSoCAwfIDBAhkBAxWpipBCRAwWH6AAIGMgMHKVCUoAQIGyw8QIJARMFiZqgQlQMBg+QECBDICBitTlaAECBgsP0CAQEbAYGWqEpQAgQdWMQCX4yW9owAAAABJRU5ErkJggg==') {
+                        alert('Please provide your digital signature');
+                        return false;
+                    }
+                }
+
+                $(this).addClass('px-3').html('<i class="fa fa-cog fa-spin"></i> Processing...')
+                $(this).prop('disabled', true);
                 form.submit();
             }
             return form;
