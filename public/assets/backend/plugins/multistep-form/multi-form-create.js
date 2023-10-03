@@ -118,17 +118,18 @@
 
         /* Next button goes forward if current block validates */
         form.find('.next').click(function() {
+
             if(curIndex() === 2){
+                if ($('input[name=over_eighteen]:checked').val() !== 'Yes') {
+                    $('#overEghiteenYes').addClass('error');
+                    alert("Please select you are over 18");
+                    return false;
+                }
+                
                 const imageFileOfId = $(tabs).find('#imageFileOfId').val();
                 const imageBackOfId = $(tabs).find('#imageBackOfId').val();
                 if(!imageFileOfId || !imageBackOfId){
                     $('.legal-adults').find('.img-view').removeClass("border-primary").addClass('border-danger');
-                    return false;
-                }
-
-                if ($('input[name=over_eighteen]:checked').val() !== 'Yes') {
-                    $('#overEghiteenYes').addClass('error');
-                    alert("Please select you are over 18");
                     return false;
                 }
 
@@ -140,10 +141,12 @@
                         errorPlacement:function (){
                             return false;
                         }});
+
                     if(form.valid() == true){
                         form.navigateTo(curIndex() + 1);
                         return true;
                     }
+                    alert('Please fill up the required fields');
                     return false;
                 }
             }
