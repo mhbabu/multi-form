@@ -11,7 +11,7 @@
         {!! Form::text('secondary_focus','',['class'=>$errors->has('secondary_focus')?'form-control is-invalid':'form-control required','placeholder'=>'Type Here']) !!}
     </div>
 
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-12">
         {!! Form::label('entertain','3. What fetishes do you entertain?',['class'=>'required-star']) !!}
         {!! Form::select('entertain',['Femdome' => 'Femdome', 'Submissive' => 'Submissive', 'Bondages' => 'Bondages', 'Others' => 'Others'],'',['class'=>$errors->has('entertain')?'form-control is-invalid':'form-control required','placeholder'=>'---', 'id' => 'entertain']) !!}
     </div>
@@ -20,7 +20,7 @@
         {!! Form::text('others_fetiches','',['class'=>$errors->has('others_fetiches')?'form-control is-invalid':'form-control required','placeholder'=>'Type Here','id' => '']) !!}
     </div>
 
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-12">
         {!! Form::label('racial_objections','4. Do you have any racial objections?',['class'=>'required-star']) !!}
         {!! Form::text('racial_objections','',['class'=>$errors->has('racial_objections')?'form-control is-invalid':'form-control required','placeholder'=>'Type Here']) !!}
     </div>

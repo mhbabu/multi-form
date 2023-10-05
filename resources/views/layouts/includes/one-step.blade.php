@@ -73,7 +73,7 @@
         {!! Form::select('gender',['Female' => 'Female', 'Male' => 'Male', 'Transgender Female' => 'Transgender Female', 'Transgender Male' => 'Transgender Male'],'',['class'=>$errors->has('gender')?'form-control is-invalid':'form-control required','placeholder'=>'---']) !!}
     </div>
     <div class="col-md-12 form-group">
-        {!! Form::label('ethnicities', 'Ethnicities', ['class' => 'required-star']) !!}
+        {!! Form::label('ethnicities', 'Ethnicity', ['class' => 'required-star']) !!}
         {!! Form::select('ethnicities',['Asian' => 'Asian', 'Black' => 'Black', 'White' => 'White', 'Latin' => 'Latin', 'European' => 'European'],'',['class'=>$errors->has('ethnicities')?'form-control is-invalid':'form-control required','placeholder'=>'---']) !!}
     </div>
 </div>

@@ -2,17 +2,17 @@
     <div class="col-md-12 mb-3 text-center">
         <h3 class="text-uppercase">Social Network Accts</h2>
     </div>
-    <div class="col-md-6 form-group">
+    <div class="col-md-12 form-group">
         {!! Form::label('facebook','Facebook:') !!}
         {!! Form::text('facebook','',['class'=>'form-control','placeholder'=>'Type Here']) !!}
     </div>
     <div class="col-md-6 form-group">
-        {!! Form::label('twitter','Twitter:') !!}
-        {!! Form::text('twitter','',['class'=>'form-control','placeholder'=>'Type Here']) !!}
+        {!! Form::label('twitter','Twitter:', ['class' => 'required-star']) !!}
+        {!! Form::text('twitter','',['class'=>$errors->has('twitter')?'form-control is-invalid':'form-control required','placeholder'=>'Type Here']) !!}
     </div>
 
     <div class="col-md-6 form-group">
-        {!! Form::label('instragram','Instragram:') !!}
-        {!! Form::text('instragram','',['class'=>'form-control','placeholder'=>'Type Here']) !!}
+        {!! Form::label('instragram','Instragram:',['class' => 'required-star']) !!}
+        {!! Form::text('instragram','',['class'=>$errors->has('instragram')?'form-control is-invalid':'form-control required','placeholder'=>'Type Here']) !!}
     </div>
 </div>
