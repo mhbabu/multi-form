@@ -79,7 +79,7 @@
                     <h4 class="congratulation-contents-title"> Congratulations! </h4>
                     <p class="congratulation-contents-para"> Your application has been received! Our back office team will be in touch with you shortly. </p>
                     <div class="btn-wrapper mt-4">
-                        <a href="{{ url('/') }}" class="cmn-btn btn-bg-1"> Go to Home </a>
+                        <a href="https://alluringintros.eu/" class="cmn-btn btn-bg-1"> Go to Home </a>
                     </div>
                 </div>
             </div>
