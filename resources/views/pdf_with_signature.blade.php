@@ -125,12 +125,10 @@
             written agreement of equal dignity signed by the Parties hereto.
         </p>
         <p>
-            [DATE] <span style="margin-left: 1em"> {{ now()->format('d/m/Y') }}</span><br />
-            [SIGNATURES] <div style="margin-left: 1em"> <img src="{{ $signatureImage }}" height="40" width="60" alt="Signature" /></div>
-            [NOTARY JURAT] <br />
-            [CONTRACTOR INITIAL EVERY PAGE]
+            Date : <span style="margin-left: 1em"> {{ now()->format('d/m/Y') }}</span><br />
+            Model Signature <div style="margin-left: 1em"> <img src="{{ $signatureImage }}" height="40" width="60" alt="Signature" /></div>
+            Model Initial <br />
         </p>
-        <p>10161 West Park Run Drive Suite 150 Las Vegas, NV 89145</p>
     </div>
 </body>
 

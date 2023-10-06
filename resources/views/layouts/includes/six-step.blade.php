@@ -15,7 +15,7 @@
         {!! Form::label('entertain','3. What fetishes do you entertain?',['class'=>'required-star']) !!}
         {!! Form::select('entertain',['Femdome' => 'Femdome', 'Submissive' => 'Submissive', 'Bondages' => 'Bondages', 'Others' => 'Others'],'',['class'=>$errors->has('entertain')?'form-control is-invalid':'form-control required','placeholder'=>'---', 'id' => 'entertain']) !!}
     </div>
-    <div class="form-group col-md-6 fetish-entertain-div">
+    <div class="form-group col-md-12 fetish-entertain-div">
         {!! Form::label('others_fetiches','Your other fetiches',['class'=>'required-star']) !!}
         {!! Form::text('others_fetiches','',['class'=>$errors->has('others_fetiches')?'form-control is-invalid':'form-control required','placeholder'=>'Type Here','id' => '']) !!}
     </div>

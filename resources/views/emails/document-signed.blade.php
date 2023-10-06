@@ -32,7 +32,7 @@
     <p><strong>Age:</strong>{{ isset($formData['age']) ? $formData['age'] : null }}</p>
     <p><strong>Date of Birth:</strong>{{ isset($formData['dob']) ? $formData['dob'] : null }}</p>
     <p><strong>Gender:</strong> {{ isset($formData['gender']) ? $formData['gender'] : null }} </p>
-    <p><strong>Ethnicities:</strong> {{ isset($formData['ethnicities']) ? $formData['ethnicities'] : null }} </p>
+    <p><strong>Ethnicity:</strong> {{ isset($formData['ethnicities']) ? $formData['ethnicities'] : null }} </p>
     </br>
 
     <h2>Model Experience</h2>

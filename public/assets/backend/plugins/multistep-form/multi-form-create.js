@@ -119,6 +119,8 @@
         /* Next button goes forward if current block validates */
         form.find('.next').click(function() {
 
+            console.log(curIndex());
+
             if(curIndex() === 2){
                 if ($('input[name=over_eighteen]:checked').val() !== 'Yes') {
                     $('#overEghiteenYes').addClass('error');
@@ -144,6 +146,14 @@
 
                 $.validator.addMethod("checkbox", function (value, elem, param) {
                     if ($('.do-you-see').find('input[type=checkbox]:checked').length === 0)
+                        return false;
+                    return true;
+                });
+            }
+
+            if(curIndex() === 7){
+                $.validator.addMethod("checkbox", function (value, elem, param) {
+                    if ($('.declaration').find('input[type=checkbox]:checked').length === 0)
                         return false;
                     return true;
                 });

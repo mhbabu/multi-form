@@ -96,11 +96,11 @@
         {!! Form::text('time_length_experience','',['class'=>'form-control','placeholder'=>'Type Here']) !!}
     </div>
 
-    <div class="col-md-6 form-group">
+    <div class="col-md-12 form-group">
         {!! Form::label('resume_highlight', "List of resume highlights we should know about (Ex. Awards, Magazines, Films etc.)") !!}
         {!! Form::text('resume_highlight','',['class' => 'form-control','placeholder'=>'Type Here']) !!}
     </div>
-    <div class="col-md-6 form-group">
+    <div class="col-md-12 form-group">
         {!! Form::label('profile_url', "Please mention your Free one's Profile URL if you have?") !!}
         {!! Form::text('profile_url','',['class'=>'form-control','placeholder'=>'Type Here']) !!}
     </div>
