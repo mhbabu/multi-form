@@ -66,7 +66,7 @@
                                     <li class="master-degree" style="cursor:pointer">YOUR DOMINATIONS</li>
                                     <li class="english-language" style="cursor:pointer">QUESTION & ANS</li>
                                     <li class="testimonial" style="cursor:pointer">Social Network Accts</li>
-                                    <li class="interested-country" style="cursor:pointer">AGGREMENT</li>
+                                    <li class="interested-country" style="cursor:pointer">agreement</li>
                                     <li class="last-one-step" style="cursor:pointer">NETWORK & SIGNATURE</li>
                                 </ul>
                             </div>
