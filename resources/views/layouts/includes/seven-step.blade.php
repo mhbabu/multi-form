@@ -12,7 +12,7 @@
     </div>
 
     <div class="col-md-6 form-group">
-        {!! Form::label('instragram','Instragram:',['class' => 'required-star']) !!}
-        {!! Form::text('instragram','',['class'=>$errors->has('instragram')?'form-control is-invalid':'form-control required','placeholder'=>'Type Here']) !!}
+        {!! Form::label('instagram','Instagram:',['class' => 'required-star']) !!}
+        {!! Form::text('instagram','',['class'=>$errors->has('instagram')?'form-control is-invalid':'form-control required','placeholder'=>'Type Here']) !!}
     </div>
 </div>

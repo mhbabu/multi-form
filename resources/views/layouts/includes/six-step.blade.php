@@ -3,11 +3,11 @@
         <h3 class="text-uppercase">Please answer these following questions</h2>
     </div>
     <div class="form-group col-md-6">
-        {!! Form::label('primary_focous','1. What is your primary focus in the companion?',['class'=>'required-star']) !!}
+        {!! Form::label('primary_focous','1. What is your primary focus in the industry?',['class'=>'required-star']) !!}
         {!! Form::select('primary_focous',['Pornstar' => 'Pornstar', 'Cam Model' => 'Cam Model', 'MILF' => 'MILF', 'Hot Wife' => 'Hot Wife', 'Dominatrix' => 'Dominatrix'],'',['class'=>$errors->has('primary_focous')?'form-control is-invalid':'form-control required','placeholder'=>'---']) !!}
     </div>
     <div class="form-group col-md-6">
-        {!! Form::label('secondary_focus','2. What is your secondary focus in the companion?',['class'=>'required-star']) !!}
+        {!! Form::label('secondary_focus','2. What is your secondary focus in the industry?',['class'=>'required-star']) !!}
         {!! Form::text('secondary_focus','',['class'=>$errors->has('secondary_focus')?'form-control is-invalid':'form-control required','placeholder'=>'Type Here']) !!}
     </div>
 

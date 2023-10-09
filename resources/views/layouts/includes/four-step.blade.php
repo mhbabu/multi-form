@@ -39,8 +39,8 @@
     </div>
 
     <div class="col-md-6 form-group">
-        {!! Form::label('tatoos','Tatoos',['class'=>'required-star']) !!}
-        {!! Form::text('tatoos','',['class'=>$errors->has('tatoos')?'form-control is-invalid':'form-control required','placeholder'=>'Type Here']) !!}
+        {!! Form::label('tattoos','Tattoos',['class'=>'required-star']) !!}
+        {!! Form::text('tattoos','',['class'=>$errors->has('tattoos')?'form-control is-invalid':'form-control required','placeholder'=>'Type Here']) !!}
     </div>
 </div>    
     

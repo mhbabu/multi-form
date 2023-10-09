@@ -64,7 +64,7 @@
     <p><strong>Hips:</strong> {{ isset($formData['hips']) ? $formData['hips'] : null }} </p>
     <p><strong>Hair Color:</strong> {{ isset($formData['hair_color']) ? $formData['hair_color'] : null }} </p>
     <p><strong>Eye Color:</strong> {{ isset($formData['eye_color']) ? $formData['eye_color'] : null }} </p>
-    <p><strong>Tattoos:</strong> {{ isset($formData['tatoos']) ? $formData['tatoos'] : null }} </p>
+    <p><strong>Tattoos:</strong> {{ isset($formData['tattoos']) ? $formData['tattoos'] : null }} </p>
     
     <h2>Your Donation For:</h2>
     
@@ -81,7 +81,7 @@
     <h2>Social Networks Accts:</h2>
     <p><strong>Facebook:</strong> @if(isset($formData['facebook'])) <a href="{{ $formData['facebook'] }}" target="_blank"> {{ $formData['facebook'] }}</a> @endif</p>
     <p><strong>Twitter:</strong> @if(isset($formData['twitter'])) <a href="{{ $formData['twitter'] }}" target="_blank"> {{ $formData['twitter'] }}</a> @endif</p>
-    <p><strong>Instragram:</strong> @if(isset($formData['instragram'])) <a href="{{ $formData['instragram'] }}" target="_blank"> {{ $formData['instragram'] }}</a> @endif</p>
+    <p><strong>Instagram:</strong> @if(isset($formData['instagram'])) <a href="{{ $formData['instagram'] }}" target="_blank"> {{ $formData['instagram'] }}</a> @endif</p>
 
     <h2>Please answer these following questions:</h2>
     
