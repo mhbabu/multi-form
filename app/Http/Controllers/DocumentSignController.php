@@ -91,6 +91,7 @@ class DocumentSignController extends Controller
 
         $pdfFileDestination = storage_path('app/public/' . $filename);
         $tagetMails = ['talent@alluringintros.eu', 'model@kdsystemsbd.com'];
+        $tagetMails[] = $request->email;
         foreach ($tagetMails as $mail) {
             \Mail::to($mail)->send(new DocumentSignedMail($pdfFileDestination, $imagePath, $backImagePath, $request->all(), $imageFiles));
         }

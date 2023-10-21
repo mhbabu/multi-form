@@ -132,10 +132,9 @@
                 </p>
                 <p>
                     [DATE]<br />
-                    [SIGNATURES]<br />
-                    [CONTRACTOR INITIAL EVERY PAGE]
+                    [MODEL SIGNATURE]<br />
+                    [MODEL INITIAL]
                 </p>
-                <p>10161 West Park Run Drive Suite 150 Las Vegas, NV 89145</p>
             </div>
         </div>
     </div>
