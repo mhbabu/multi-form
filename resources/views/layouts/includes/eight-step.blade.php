@@ -138,7 +138,7 @@
             </div>
         </div>
     </div>
-    <div class="row mt-3">
+    <div class="row mt-3 ml-1">
         <div class="col-md-12">
             <div class="form-group declaration">
                 {!! Form::label('declaration','Declaration',['class'=>'required-star']) !!}
