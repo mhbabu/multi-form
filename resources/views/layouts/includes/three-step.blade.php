@@ -17,7 +17,7 @@
         <div class="form-group">
             {!! Form::label('imageFileOfId', "Submit form of ID: Passport or Driver’s Licence for Proof of Age", ['class' => 'required-star']) !!}
             <br>
-            <img class="border border-primary img-view" src="{{ url('img/photo.png') }}" height="250" width="100%" required />
+            <img class="border border-primary img-view imageFileOfId" src="{{ url('img/photo.png') }}" height="250" width="100%" style="cursor: pointer" />
             <label class="btn btn-block btn-secondary btn-sm rounded-0" style="cursor: pointer">
                 <input class="img-file required" type="file" name="imageFileOfId" style="display: none" accept="image/png,image/jpeg,image/jpg" id="imageFileOfId" >
                 <i class="fa fa-upload"></i> Upload
@@ -29,7 +29,7 @@
         <div class="form-group">
             {!! Form::label('imageBackOfId', 'We must also have a picture of the back of your ID', ['class' => 'required-star']) !!}
             <br>
-            <img class="border border-primary img-view" src="{{ url('img/photo.png') }}" height="250" width="100%" />
+            <img class="border border-primary img-view imageBackOfId" src="{{ url('img/photo.png') }}" height="250" width="100%" style="cursor: pointer" />
             <label class="btn btn-block btn-secondary btn-sm rounded-0" style="cursor: pointer">
                 <input class="img-file" class="file" type="file" name="imageBackOfId" style="display: none" accept="image/png,image/jpeg,image/jpg" id="imageBackOfId">
                 <i class="fa fa-upload"></i> Upload

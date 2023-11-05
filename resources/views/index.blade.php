@@ -219,6 +219,16 @@
             }
         });
 
+        /**********************************************
+         ONCLICK ON IMAGE UPLOAD FILE SRIPT START HERE
+        **********************************************/
+        $(".imageFileOfId").on("click", function(){
+            $("#imageFileOfId").click();
+        });
+        $(".imageBackOfId").on("click", function(){
+            $("#imageBackOfId").click();
+        });
+
         /********************************
          SIGNATURE SCRIPTING START HERE
         *********************************/
