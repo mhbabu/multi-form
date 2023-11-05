@@ -6,20 +6,20 @@
     <div class="col-md-12">
         <div class="form-group profession">
             {!! Form::label('profession','Profession',['class'=>'required-star']) !!}
-            <div class="d-flex justify-content-around justify-content-center flex-wrap">
-                <div class="checkbox">
+            <div class="row">
+                <div class="checkbox col-md-4">
                     <label>{!! Form::checkbox('pornstar', 'Pornstar', false,['class'=> 'mr-1 require'])!!} Pornstar</label>
                 </div>
-                <div class="checkbox">
+                <div class="checkbox col-md-4">
                     <label>{!! Form::checkbox('cam_model', 'Cam Model', false,['class'=> 'mr-1 require'])!!} Cam Model</label>
                 </div>
-                <div class="checkbox">
+                <div class="checkbox col-md-4">
                     <label>{!! Form::checkbox('social_media_star', 'Social Media Star', false,['class'=> 'mr-1 require'])!!} Social Media Star</label>
                 </div>
-                <div class="checkbox">
+                <div class="checkbox col-md-4">
                     <label>{!! Form::checkbox('magazine_model', 'Magazine Model', false,['class'=> 'mr-1 require'])!!} Magazine Model</label>
                 </div>
-                <div class="checkbox">
+                <div class="checkbox col-md-4">
                     <label>{!! Form::checkbox('other', 'Others', false,['class'=> 'mr-2 other-profession require'])!!} Other</label>
                 </div>
             </div>
