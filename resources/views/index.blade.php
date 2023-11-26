@@ -143,7 +143,7 @@
         });
 
         $.validator.addMethod("radio", function (value, elem, param) { // Second Step
-            if ($('.model-experiences').find('input[type=radio]:checked').length !== 7 )
+            if ($('.model-experiences').find('input[type=radio]:checked').length !== 7 && $('.model-experiences').find('input[type=checkbox]:checked').length == 0 )
                 return false;
             return true;
         });

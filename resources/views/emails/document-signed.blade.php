@@ -40,7 +40,11 @@
     <p><strong>Have You Model Before:</strong> {{ isset($formData['medeled_before']) ? $formData['medeled_before'] : null }} </p>
     <p><strong>Base City:</strong> {{ isset($formData['base_city']) ? $formData['base_city'] : null }} </p>
     <p><strong>Do You Model in Your Base City:</strong> {{ isset($formData['model_base_city']) ? $formData['model_base_city'] : null }} </p>
-    <p><strong>Availability in Base City:</strong> {{ isset($formData['availability_base_city']) ? $formData['availability_base_city'] : null }} </p>
+    <p><strong>Availability in Base City:</strong> 
+        {{ isset($formData['availability_base_city_incall']) ? $formData['availability_base_city_incall'] : null }} 
+        {{ isset($formData['availability_base_city_outcall']) ? $formData['availability_base_city_outcall'] : null }} 
+    </p>
+    </p>
     <p><strong>Do You Travel:</strong> {{ isset($formData['travel_often']) ? $formData['travel_often'] : null }} </p>
     <p><strong>Model Tours:</strong> {{ isset($formData['model_tour']) ? $formData['model_tour'] : null }} </p>
     <p><strong>Are you an adult film star:</strong> {{ isset($formData['adult_film_star']) ? $formData['adult_film_star'] : null }} </p>

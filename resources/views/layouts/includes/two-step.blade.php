@@ -41,17 +41,18 @@
         </div>
     </div>
 
-    <div class="col-md-6 form-group">
+    <div class="col-md-6 form-group base_city_checkbox">
         {!! Form::label('availability_base_city', 'Available in Based City?', ['class' => 'required-star']) !!} <br>
         <div class="form-check form-check-inline ml-3">
-            <input class="form-check-input" type="radio" name="availability_base_city" id="availableBaseCityYes" value="Yes">
-            <label class="form-check-label" for="availableBaseCityYes">Yes</label>
+            <input class="form-check-input" type="checkbox" name="availability_base_city_incall" id="availableBaseCityYes" value="Incall">
+            <label class="form-check-label" for="availableBaseCityYes">Incall</label>
         </div>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="availability_base_city" id="availableBaseCityNo" value="No">
-            <label class="form-check-label" for="availableBaseCityNo">No</label>
+            <input class="form-check-input" type="checkbox" name="availability_base_city_outcall" id="availableBaseCityNo" value="Outcall">
+            <label class="form-check-label" for="availableBaseCityNo">Outcall</label>
         </div>
     </div>
+
     <div class="col-md-6 form-group">
         {!! Form::label('travel_often', 'Do you travel often?', ['class' => 'required-star']) !!} <br>
         <div class="form-check form-check-inline ml-3">
